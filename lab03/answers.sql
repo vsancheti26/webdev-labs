@@ -53,10 +53,11 @@ where posts.user_id=26 or posts.user_id=12;
 
 
 -- Exercise 9
-select posts.id, posts.pub_date,following.following_id
-from posts
-inner join following on posts.user_id=following.user_id
-where following.user_id=26;
+select p.id, p.pub_date,f.following_id
+from following f
+inner join posts p on f.following_id=p.user_id
+where f.user_id=26;
+
 
 
 
@@ -88,4 +89,5 @@ where post_id=221 and user_id=26;
 update users
 set email='knick2022@gmail.com'
 where id=26;
+
 
